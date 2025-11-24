@@ -21,7 +21,7 @@ on:
 # !! IMPORTANT: Change these values to match your Azure setup !!
 env:
   AZURE_WEB_APP_NAME: 'app-phpHelloWorld202511131970pm'       # The name of your Azure App Service
-  AZURE_CONTAINER_REGISTRY: 'app-phpHelloWorld202511131970pm'       # The name of your Azure Container Registry (e.g., techwithmukacr)
+  AZURE_CONTAINER_REGISTRY: 'phpHelloWorld202511131970pm'     # The name of your Azure Container Registry (WITHOUT 'app-' prefix)
   IMAGE_NAME: 'simple_php_azure_deployment-web'                 # The name of the image to build
 
 # ---
