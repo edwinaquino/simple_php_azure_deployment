@@ -61,6 +61,9 @@ jobs:
         uses: azure/docker-login@v1
         with:
           login-server: ${{ env.AZURE_CONTAINER_REGISTRY }}.azurecr.io
+          # github secrets for ACR username and password
+          username: ${{ secrets.ACR_USERNAME }}
+          password: ${{ secrets.ACR_PASSWORD }}
 
       # ---
       # STEP 4: BUILD AND PUSH DOCKER IMAGE
