@@ -22,5 +22,6 @@
 <body>
     <h1>Hi this is Azure GIthub Actions and Docker Container</h1>
     <p>947pm: added ACR USER AND PASSWORD:</p>
+    <p>958pm: updated azure credentials</p>
 </body>
 </html>
