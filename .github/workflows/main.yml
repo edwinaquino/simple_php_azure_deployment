@@ -32,6 +32,11 @@ jobs:
   build-and-deploy:
     # Use the latest Ubuntu runner
     runs-on: ubuntu-latest
+    
+    # Required permissions for Azure OIDC authentication
+    permissions:
+      id-token: write
+      contents: read
 
     # Define the steps
     steps:
@@ -45,7 +50,7 @@ jobs:
       # ---
       # STEP 2: LOG IN TO AZURE
       # ---
-      # Logs in to Azure using a Service Principal.
+      # Logs in to Azure using a Service Principal with client secret.
       # You must create these secrets in your GitHub repo:
       # - AZURE_CLIENT_ID
       # - AZURE_TENANT_ID
@@ -58,6 +63,7 @@ jobs:
           tenant-id: ${{ secrets.AZURE_TENANT_ID }}
           subscription-id: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
           client-secret: ${{ secrets.AZURE_CLIENT_SECRET }}
+          enable-AzPSSession: false
 
       # ---
       # STEP 3: LOG IN TO AZURE CONTAINER REGISTRY (ACR)
